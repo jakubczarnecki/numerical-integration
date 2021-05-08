@@ -1,5 +1,6 @@
 import numpy as np
 
+<<<<<<< HEAD
 def simpson(f, a, b):
     av = (b - a) / 2
     integral = (np.exp((-a) ** 2) * f(a)
@@ -28,3 +29,5 @@ def advancedSimpson(f, a, b, n, epsilon):
             integral = temp
             n += 1
     return integral
+=======
+>>>>>>> b0512ff393cc6cc46b1c723380c011051596d82c
