@@ -1,11 +1,21 @@
-nodes = ([])
-weights = ([])
+def gauss_hermite(f, n_nodes):
+    roots = (
+        (-0.707107, 0.707107),
+        (-1.224745, 0.0, 1.224745),
+        (-1.650680, -0.534648, 0.534648, 1.650680),
+        (-2.020183, -0.958572, 0.0, 0.958572, 2.020183),
+    )
 
-def hermite(values, numOfNodes, f):
-    result = 0
-    for i in range(5):
-        if(values[numOfNodes - 2][i] != 0):
-            multiplier = weights[numOfNodes - 2][i] * f(nodes[numOfNodes - 2][i])
-            result += multiplier
+    coefficients = (
+        (0.886227, 0.886227),
+        (0.295409, 1.181636, 0.295409),
+        (0.081313, 0.804914, 0.804914, 0.081313),
+        (0.019953, 0.393619, 0.954309, 0.393619, 0.019953)
+    )
+
+    result = 0.0
+
+    for i in range(n_nodes):
+        result += f(roots[n_nodes - 2][i]) * coefficients[n_nodes - 2][i]
+
     return result
-
