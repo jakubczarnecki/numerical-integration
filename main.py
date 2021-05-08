@@ -33,9 +33,10 @@ if __name__ == '__main__':
     print("Wynik:")
     if choice == "1":
         print("podaj epsilon:")
-
-        print(newton_cotes(func, 0.01))
+        epsilon = input()
+        print(newton_cotes(func, np.double(epsilon)))
     elif choice == "2":
         print("podaj liczbę węzłów:")
-        print(gauss_hermite(f.f3, 5))
+        nodes = input()
+        print(gauss_hermite(f.f3, int(nodes)))
 
