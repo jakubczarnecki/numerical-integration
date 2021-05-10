@@ -1,4 +1,4 @@
-from numpy import sin, cos
+from numpy import sin, cos, e
 
 f0 = lambda x: 2 * x - 4
 
@@ -9,3 +9,5 @@ f2 = lambda x: sin(x)
 f3 = lambda x: cos(x)
 
 f4 = lambda x: x * x
+
+w = lambda x: e ** (- (x * x))
