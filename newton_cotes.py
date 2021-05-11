@@ -3,11 +3,8 @@ from numpy import e
 
 def simpson(a, b, f, w):
     h = (b - a) / 2
-    # integral = (e ** (- (a ** 2) * function(a)
-    #                   + 4 * e ** (- ((a + b) / 2) ** 2) * function(((a + b) / 2))
-    #                   + e ** - (b ** 2)) * function(b)) * h / 3
     integral = h / 3 * ((w(a) * f(a))
-                      + 4 * (w(a + b / 2) * w(a + b / 2))
+                      + 4 * (w(a + b / 2) * f(a + b / 2))
                       + (w(b) * f(b)))
     return integral
 
@@ -44,6 +41,8 @@ def newton_cotes(function, weight, epsilon):
         integral = advanced_simpson(a, a + delta, function, weight, epsilon)
         sum += integral
         a += delta
+        print("A: " + str(a))
+        print("Delta: " + str(delta))
         if abs(integral) <= abs(epsilon):
             isNotAccurate = False
     return sum
