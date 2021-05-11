@@ -1,6 +1,3 @@
-from numpy import e
-
-
 def simpson(a, b, f, w):
     h = (b - a) / 2
     integral = h / 3 * ((w(a) * f(a))
